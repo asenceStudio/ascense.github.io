@@ -1,0 +1,82 @@
+
+header {
+  background-color: #030e0fc2;
+  color: var(--color);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  transition: .5s;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(50px);
+  z-index: 1000;
+}
+
+.menu {
+  background-color: transparent;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.logo {
+  letter-spacing: -2px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 50px;
+}
+.nav-content {
+  margin: 0 50px 0 0;
+}
+.hidden-menu {
+  display: none;
+}
+.nav-bar {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.nav-item {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  transition: .2s;
+  font-weight: bold;
+  width: 100%;
+
+}
+.nav-item:hover {
+  cursor: pointer;
+  color: #666464;
+}
+p {
+  color: #a5a4a4;
+  font-weight: bold;
+}
+
+/*EStilos globales para clase "content" y sus relaciones*/
+
+.content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 800px) {
+  .menu {display: none;}
+  header {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .nav-content {
+      display: flex;
+  }
+}
+
