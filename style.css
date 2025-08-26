@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 0; 
   padding: 0;
   font-family: sans-serif;
   color: white;
@@ -7,6 +7,16 @@ body {
   overflow-x: hidden;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+canvas#background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /*esto es para que quede atras de todo*/
+  
 }
 
 .content {
@@ -21,7 +31,10 @@ body {
   max-height: 600px;
   justify-content: center;
   height: 100vh;
+  overflow: hidden;
 }
+
+
 
 .hero-tag {
   background-color: #252525;
@@ -81,6 +94,7 @@ body {
   padding: 0;
   border-radius: 35%;
   border: rgba(255, 255, 255, 0.452) 1px solid;
+  
 }
 
 .hero-p {
@@ -153,8 +167,13 @@ body {
   border-radius: 20px;
   border: rgba(255, 255, 255, 0.205) 1px solid;
   margin: 0 auto;
+  animation: up .5s ease-in-out;
 }
-
+@keyframes up {
+  from {transform: translateY(50px);}
+  to {transform: translateY(0px);}
+  
+}
 /* ofrecemos */
 .ofrecemos {
   margin: 150px auto;

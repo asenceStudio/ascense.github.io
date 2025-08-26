@@ -1,7 +1,7 @@
 
 header {
   background-color: #030e0fc2;
-  color: var(--color);
+  color: var(--color); 
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;

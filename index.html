@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--GOOGLE FONTS-->
@@ -20,6 +20,8 @@
     <title>ASCENSE</title>
 </head>
 <body class="">
+    
+    
     <header>
         <section>
             <h1 class="logo">ASCENSE</h1>
@@ -29,8 +31,8 @@
 
         <nav class="nav-content hidden-menu">
             <ul class="nav-bar">
-                <li><a class="nav-item" href="/examenes">Examenes</a></li>
-                <li><a class="nav-item" href="/comunidad" >Comunidad</a></li>
+                <li><a class="nav-item" href="./dashboardPublic.html">Examenes</a></li>
+                <li><a class="nav-item" href="./dashboardExamen.html" >Comunidad</a></li>
                 <li><a class="nav-item" href="/recursos" >Recursos</a></li>
             </ul>
         </nav>
@@ -39,13 +41,14 @@
     <main class="content">
         
         <section class="hero">
+             <canvas id="background"></canvas>
             <h3 class="hero-tag">🚀 Avanza con organización y enfoque</h3>
             <div class="hero-primero">
                 <div class="hero-h1"><img src="./images/faviconASCENSE.png" alt="Logotipo de pagina web" width="110px"><h1>ASCENSE</h1></div>
             </div>
             <p class="hero-p">Preparate para mejorar tus examenes con los mejores recursos.</p>
             <div class="content-btns-hero">
-                <a class="btn-hero" href="./examenes">Comenzar</a>
+                <a class="btn-hero" href="./dashboardPublic.html">Comenzar</a>
                 <a class="btn-hero btn-info" href="https://discord.gg/xSZfaXMFDJ">Entra a nuestro discord</a>
                 <!-- <a href="/0812377" class="btn-hero mas-reciente">Examen mas reciente</a> -->
             </div>
@@ -53,7 +56,7 @@
 
         <!-- Preview panel -->
          <section class="panel-preview">
-            <img src="./images/hero.webp" alt="Imagen de muestra del panel" width="100px">
+            <img src="./images/hero-img.png" alt="Imagen de muestra del panel" width="100px">
          </section>
         <!--  -->
          <!-- Ofrecemos -->
@@ -112,7 +115,6 @@
         
 
         <!-- Footer -->
-
         <footer>
             <section class="tarjeta-presentacion">
                 <img src="./images/faviconASCENSE.png" alt="" class="tarjeta-presentacion-img">
@@ -193,6 +195,78 @@
             </section>
         </footer>
        <!-- <script src="/JS/main.js"></script>  -->
+
+       <script>
+
+const canvas = document.getElementById("background");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray = [];
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 1;
+    this.speedX = (Math.random() - 0.5) * 0.5; // movimiento horizontal suave
+    this.speedY = (Math.random() - 0.5) * 0.5; // movimiento vertical suave
+    this.opacity = Math.random() * 0.8 + 0.2; // opacidad aleatoria
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    // Reaparecer en pantalla al salir de los bordes
+    if (this.x < 0) this.x = canvas.width;
+    if (this.x > canvas.width) this.x = 0;
+    if (this.y < 0) this.y = canvas.height;
+    if (this.y > canvas.height) this.y = 0;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${this.opacity})`;
+    ctx.fill();
+  }
+}
+
+function handleParticles() {
+  particlesArray.forEach(p => {
+    p.update();
+    p.draw();
+  });
+}
+
+function init() {
+  particlesArray = [];
+  // Cantidad proporcional al área de la pantalla
+  const count = Math.floor((canvas.width * canvas.height) / 7000); 
+  for (let i = 0; i < count; i++) {
+    particlesArray.push(new Particle());
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  handleParticles();
+  requestAnimationFrame(animate);
+}
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  init();
+});
+
+init();
+animate();
+
+ </script>
 </body>
 </html>
 
