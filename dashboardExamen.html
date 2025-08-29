@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASCENSE | DASHBOARD</title>
     <link rel="stylesheet" href="./dashboardExamen.css">
+    <link rel="stylesheet" href="./header.css">
     <script src="https://kit.fontawesome.com/6788e71a64.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -22,6 +23,8 @@
                 <li><a href="#" class="sidebar-option"><i class="fa-solid fa-envelope"></i> Mensajes</a></li>
                 <li><a href="#" class="sidebar-option"><i class="fa-solid fa-box-open"></i> Recursos</a></li>
                 <li><a href="#" class="sidebar-option"><i class="fa-solid fa-graduation-cap"></i> Cursos</a></li>
+                <li><a href="./editorCodigo.html" class="sidebar-option "><i class="fas fa-code"></i> Editor de codigo</a></li>
+
             </ul>
         </nav>
         <hr>
@@ -53,13 +56,28 @@
     </aside>
 
     <div class="main-container">
-        <header class="top-header">
+        <div class="top-header">
             <span class="breadcrumb">Panel ascense > General</span>
             <div class="user-profile">
                 <i class="fa-solid fa-user-circle"></i>
             </div>
-        </header>
+        </div>
+        
+ <header>
+        <section>
+            <h1 class="logo">ASCENSE</h1>
+            <!-- Icono menu -->
+            <button class="menu" hidden><i class="fa-solid fa-bars"></i></button>
+        </section>
 
+        <nav class="nav-content hidden-menu">
+            <ul class="nav-bar">
+                <li><a class="nav-item" href="./dashboardPublic.html">Examenes</a></li>
+                <li><a class="nav-item" href="./dashboardExamen.html" >Comunidad</a></li>
+                <li><a class="nav-item" href="/recursos" >Recursos</a></li>
+            </ul>
+        </nav>
+    </header>
         <main class="main">
             <section class="info-cards-section">
                 <div class="info-card"></div>

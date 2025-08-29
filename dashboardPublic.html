@@ -7,25 +7,26 @@
     <link rel="shortcut icon" href="/images/faviconASCENSE.png" type="image/x-icon" />
     <title>ASCENSE | EXAMENES</title>
     <link rel="stylesheet" href="./dashboardPublic.css" />
+    <link rel="stylesheet" href="./header.css" />
     <script src="https://kit.fontawesome.com/6788e71a64.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
     <!-- ======= SIDEBAR ======= -->
     <aside class="sidebar">
         <section class="header-sidebar">
             <img src="/images/faviconASCENSE.png" alt="Logotipo de ascense">
             <h1>ASCENSE</h1>
-        </section>
+        </section>  
         <hr>
         <nav>
             <p>Principal</p>
             <ul>
-                <li><a href="/index.html" class="sidebar-option"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="/index.html" class="sidebar-option active"><i class="fa-solid fa-house"></i> Inicio</a></li>
                 <li><a href="#" class="sidebar-option"><i class="fa-solid fa-envelope"></i> Mensajes</a></li>
                 <li><a href="#" class="sidebar-option"><i class="fa-solid fa-box-open"></i> Recursos</a></li>
-                <li><a href="#" class="sidebar-option active"><i class="fa-solid fa-graduation-cap"></i> Cursos</a></li>
+                <li><a href="#" class="sidebar-option "><i class="fa-solid fa-graduation-cap"></i> Cursos</a></li>
+                <li><a href="./editorCodigo.html" class="sidebar-option "><i class="fas fa-code"></i> Editor de codigo</a></li>
             </ul>
         </nav>
         <hr>
@@ -47,24 +48,47 @@
                 <li><a href="#" class="sidebar-option"><i class="fa-brands fa-css3-alt"></i> CSS</a></li>
             </ul>
         </nav>
+        
         <hr>
         <nav>
             <p>Cuenta</p>
             <ul>
                 <li><a href="#" class="sidebar-option"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
+                <li class="perfil">
+                    <span class="perfil-user">S</span>
+                    <div class="">
+                        <span class="perfil-username">Manuel</span>
+                        <span class="perfil-arroba">manuel23</span>
+                    </div>
+                </li>
             </ul>
         </nav>
     </aside>
 
     <!-- ======= CONTENEDOR PRINCIPAL ======= -->
     <div class="main-container">
-        <header class="top-header">
-            <span class="breadcrumb"><span>Panel ascense</span> > <span>General</span> > <span>Exámenes Disponibles</span></span>
+        <div class="top-header">
+            <span class="breadcrumb"><a href="./dashboardExamen.html">Panel ascense</a> > <a href="./dashboardExamen.html#general">General</a> > <a href="#">Exámenes Disponibles</a></span>
             <div class="user-profile">
                 <i class="fa-solid fa-user-circle"></i>
             </div>
-        </header>
+        </div>
+        
+ <header>
+        <section>
+            <h1 class="logo">ASCENSE</h1>
+            <!-- Icono menu -->
+            <button class="menu" hidden><i class="fa-solid fa-bars"></i></button>
+        </section>
 
+        <nav class="nav-content hidden-menu">
+            <ul class="nav-bar">
+                <li><a class="nav-item" href="./dashboardPublic.html">Examenes</a></li>
+                <li><a class="nav-item" href="./dashboardExamen.html" >Comunidad</a></li>
+                <li><a class="nav-item" href="/recursos" >Recursos</a></li>
+            </ul>
+        </nav>
+    </header>
         <main class="main">
             <div class="exam-header">
                 <div class="">
@@ -104,6 +128,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 
-
+    <script src="./sidebar.js"></script>
 </body>
 </html>

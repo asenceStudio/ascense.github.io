@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div id="editor" style="height:400px;border:1px solid #444;"></div>
+    <script src="https://unpkg.com/monaco-editor@latest/min/vs/loader.js"></script>
+
+</head>
+<body>
+    <div id="editor"></div>
+<script>
+  require.config({ paths: { vs: "https://unpkg.com/monaco-editor@latest/min/vs" }});
+  require(["vs/editor/editor.main"], function () {
+    monaco.editor.create(document.getElementById("editor"), {
+      value: "console.log('Hola Mundo');",
+      language: "javascript",
+      theme: "vs-dark"
+    });
+  });
+</script>
+</body>
+</html>

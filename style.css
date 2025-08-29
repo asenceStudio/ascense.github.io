@@ -7,8 +7,21 @@ body {
   overflow-x: hidden;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
-
+body::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(#00d77aa2, #07fa6c9a 58%);
+  opacity: .2;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: -1000;
+  filter: blur(200px);
+}
 canvas#background{
   position: fixed;
   top: 0;
@@ -233,7 +246,7 @@ canvas#background{
   width: 800px;
   height: 500px;
   border-radius: 100%;
-  background: rgba(255, 255, 255, 0.322);
+  background: rgba(255, 255, 255, 0.11);
 
   top: -50px;
   filter: blur(100px);
@@ -302,6 +315,7 @@ canvas#background{
 
 /* footer */
 footer {
+  background-color: black;
   flex-direction: column;
   margin-top: 100px;
 }
@@ -438,8 +452,6 @@ footer hr {
 }
 @media screen and (min-width: 710px) {
   /* hero */
-  .hero {
-  }
   .hero-h1 {
     flex-direction: row;;
   }
